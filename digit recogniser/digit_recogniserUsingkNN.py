@@ -12,7 +12,6 @@ test = np.genfromtxt("test.csv",skip_header=True,delimiter=",")
 label = train[:,0]
 train = train [:,1:]
 
-print (len(label))
 digit = []
 
 def euclid(a,b):
@@ -33,8 +32,9 @@ for i in test:
     for i,j in dist:
         count[i]=count.get(i,0)+1
     count = sorted(count, key=lambda k: count[k])
-    ans.append(count[0])
-
+    print (count[-1])
+    ans.append(count[-1])
+	
 l= len(test)
 imageId = [ i for i in range(1,l+1)]
 submission = pd.DataFrame({
